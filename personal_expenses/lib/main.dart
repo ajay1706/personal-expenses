@@ -13,7 +13,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
         accentColor: Colors.amber,
-
+        fontFamily: 'OpenSans',
+textTheme: ThemeData.light().textTheme.copyWith(
+  title: TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize:18
+  )
+),
+appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(title: TextStyle(fontFamily: 'Open Sans',
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold))
+      )
       ),
       title: 'Flutter App',
       home: MyHomePage(),
@@ -68,7 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text("Personal expenses"),
+        title: Text("Personal expenses",style: TextStyle(
+          fontFamily: 'Open Sans'
+        ),),
         actions: <Widget>[
           IconButton(icon: Icon(
             Icons.add,

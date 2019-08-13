@@ -14,7 +14,19 @@ TransactionList(this.transactions);
       Container(
         height: 500,
 
-          child: ListView.builder(
+          child:transactions.isEmpty?
+              Column(
+                children: <Widget>[
+                  Text("No Transactions added yet",
+                  style: Theme.of(context).textTheme.title,),
+
+              SizedBox(height: 20,),
+               Container(
+                   height: 200,
+                   child: Image.asset('images/waiting.png',fit: BoxFit.cover,)),
+                ],
+              )
+              : ListView.builder(
 itemBuilder: (ctx,index){
   return Card(
     child: Row(
@@ -30,12 +42,7 @@ itemBuilder: (ctx,index){
 
           padding: const EdgeInsets.all(10),
           child: Text("\$ ${transactions[index].amount.toStringAsFixed(2)}",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-                color: Theme.of(context).primaryColor
-
-            ),),
+            style: Theme.of(context).textTheme.title,),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
