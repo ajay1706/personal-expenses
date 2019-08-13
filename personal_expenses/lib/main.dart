@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget{
       ),
       body:Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: <Widget>[
       Container(
         width: double.infinity,
@@ -41,8 +41,25 @@ class MyHomePage extends StatelessWidget{
 
         ),
       ),
-      Card(child: Text('LIST OF TX'),
-      color: Colors.redAccent,)
+   Column(children: transaction.map((tx){
+     return Card(
+       child: Row(
+         children: <Widget>[
+           Container(
+             child: Text(tx.amount.toString()),
+           ),
+           Column(
+             children: <Widget>[
+               Text(tx.title),
+               Text(
+                 tx.date.toString()
+               )
+             ],
+           )
+         ],
+       ),
+     );
+   }).toList(),)
     ],
     ));
   }
