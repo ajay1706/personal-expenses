@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_expenses/transaction.dart';
+import 'package:personal_expenses/models/transaction.dart';
 import 'package:intl/intl.dart';
 
 main() => runApp(MyApp());
@@ -16,15 +16,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
 
-  final List<Transaction> transaction = [
-    Transaction(
-        id: 't1', title: 'New Shoes', amount: 69.99, date: DateTime.now()),
-    Transaction(
-        id: 't2',
-        title: 'Weekly Groceries',
-        amount: 16.53,
-        date: DateTime.now())
-  ];
+
 
 //  String titleInput;
 //  String amountInput;
