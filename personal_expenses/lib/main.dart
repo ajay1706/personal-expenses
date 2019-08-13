@@ -13,7 +13,11 @@ class MyApp extends StatelessWidget {
 
 
 class MyHomePage extends StatelessWidget{
-  final List<Transaction> transaction =[];
+  final List<Transaction> transaction =[
+    Transaction(id: 't1',title: 'New Shoes',amount: 69.99,date: DateTime.now()),
+    Transaction(id: 't2',title: 'Weekly Groceries',amount: 16.53,date: DateTime.now())
+
+  ];
 
   @override
   Widget build(BuildContext context) {
