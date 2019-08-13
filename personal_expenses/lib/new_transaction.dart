@@ -24,6 +24,7 @@ if(enteredTitle.isEmpty || enteredAmount <=0) {
     widget.addTx(
         enteredTitle,
         enteredAmount,);
+Navigator.of(context).pop();
     }
 
   @override
@@ -60,7 +61,7 @@ if(enteredTitle.isEmpty || enteredAmount <=0) {
             FlatButton(
                 child: Text("Add Transaction",
                   style: TextStyle(
-                      color: Colors.blueAccent,
+                     color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w600
                   ),),
                 onPressed: submitData

@@ -12,7 +12,7 @@ TransactionList(this.transactions);
   Widget build(BuildContext context) {
     return
       Container(
-        height: 300,
+        height: 500,
 
           child: ListView.builder(
 itemBuilder: (ctx,index){
@@ -25,7 +25,7 @@ itemBuilder: (ctx,index){
           margin:EdgeInsets.symmetric(horizontal:15,
               vertical: 10),
           decoration:BoxDecoration(
-              border: Border.all(color: Colors.blueAccent,width: 2)
+              border: Border.all(color: Theme.of(context).primaryColor,width: 2)
           ) ,
 
           padding: const EdgeInsets.all(10),
@@ -33,7 +33,7 @@ itemBuilder: (ctx,index){
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0,
-                color: Colors.blueAccent
+                color: Theme.of(context).primaryColor
 
             ),),
         ),
