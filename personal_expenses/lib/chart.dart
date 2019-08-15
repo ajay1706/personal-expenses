@@ -24,9 +24,8 @@ List<Map<String, Object>>  get groupedTransactionValues{
     }
 
     
-    print(DateFormat.E(weekDay));
-    print(totalSum);
-    return {'day': DateFormat.E().format(weekDay), 'amount': totalSum};
+
+    return {'day': DateFormat.E().format(weekDay).substring(0,1), 'amount': totalSum};
   }
 );
 }
@@ -39,7 +38,7 @@ List<Map<String, Object>>  get groupedTransactionValues{
         margin: EdgeInsets.all(20),
       child: Row(
         children: groupedTransactionValues.map((data){
-          return Text(' ${data['day']}: ${data['amount']} ');
+          return Text('${data['daya']}: ${data['amount']} ');
 
       }).toList(),
       ) ,
