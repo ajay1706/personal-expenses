@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch:  Colors.green,
           accentColor: Colors.amber,
           fontFamily: 'OpenSans',
           textTheme: ThemeData.light().textTheme.copyWith(
@@ -159,7 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Show Chart"),
+                Text("Show Chart",
+                style: Theme.of(context).textTheme.title,),
                 Switch.adaptive(
                   activeColor: Theme.of(context).accentColor,
                   value: _showChart,
