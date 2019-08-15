@@ -2,15 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:personal_expenses/chart.dart';
 import 'package:personal_expenses/new_transaction.dart';
 import 'package:personal_expenses/models/transaction.dart';
-
+import 'package:flutter/services.dart';
 import 'transaction_list.dart';
 
-main() => runApp(MyApp());
+main() {
+
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,DeviceOrientation.portraitUp]);
+  runApp(MyApp());}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
         accentColor: Colors.amber,
