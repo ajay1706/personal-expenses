@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _deleteTransaction(String id) {
     setState(() {
-      _userTransaction.retainWhere((tx) {
+      _userTransaction.removeWhere((tx) {
         return tx.id == id;
       });
     });
