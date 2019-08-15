@@ -28,7 +28,7 @@ List<Map<String, Object>>  get groupedTransactionValues{
 
     return {'day': DateFormat.E().format(weekDay).substring(0,1), 'amount': totalSum};
   }
-);
+).reversed.toList();
 }
 
 

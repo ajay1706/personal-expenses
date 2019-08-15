@@ -19,6 +19,9 @@ textTheme: ThemeData.light().textTheme.copyWith(
   title: TextStyle(
     fontWeight: FontWeight.bold,
     fontSize:18
+  ),
+  button: TextStyle(
+    color: Colors.white
   )
 ),
 appBarTheme: AppBarTheme(
@@ -65,8 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList();
   }
 
-  void _addNewTransaction(String txTitle,double txAmount){
-    final newTx = Transaction(title: txTitle,amount: txAmount,date: DateTime.now(),
+  void _addNewTransaction(String txTitle,double txAmount, DateTime chosenDate){
+    final newTx = Transaction(title: txTitle,amount: txAmount,date: chosenDate,
         id:DateTime.now().toString() );
 
     setState(() {
