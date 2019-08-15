@@ -14,17 +14,20 @@ TransactionList(this.transactions, this.deleteTx);
   Widget build(BuildContext context) {
     return
            transactions.isEmpty?
-              Column(
+            LayoutBuilder(builder: (ctx,constraints){
+            return  Column(
                 children: <Widget>[
                   Text("No Transactions added yet",
-                  style: Theme.of(context).textTheme.title,),
+                    style: Theme.of(context).textTheme.title,),
 
-              SizedBox(height: 20,),
-               Container(
-                   height: 200,
-                   child: Image.asset('images/waiting.png',fit: BoxFit.cover,)),
+                  SizedBox(height: 20,),
+                  Container(
+                      height: constraints.maxHeight*0.6,
+                      child: Image.asset('images/waiting.png',fit: BoxFit.cover,)),
                 ],
-              )
+              );
+
+            },)
               : ListView.builder(
 itemBuilder: (ctx,index){
   return  Card(
