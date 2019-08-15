@@ -99,28 +99,34 @@ return  tx.id == id;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Personal expenses",style: TextStyle(
+    final appBar =  AppBar(
+      title: Text("Personal expenses",style: TextStyle(
           fontFamily: 'Open Sans'
-        ),),
-        actions: <Widget>[
-          IconButton(icon: Icon(
-            Icons.add,
-            size: 30.0,
-          ),
-            onPressed:() => _startAddNewTransaction(context),)
-        ],
+      ),),
+      actions: <Widget>[
+        IconButton(icon: Icon(
+          Icons.add,
+          size: 30.0,
+        ),
+          onPressed:() => _startAddNewTransaction(context),)
+      ],
 
-      ),
+    );
+    return Scaffold(
+      appBar: appBar,
       body:
       SingleChildScrollView(
         child: Column(
 //          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-       Chart(_recentTransactions),
-            TransactionList(_userTransaction,_deleteTransaction),
+       Container(
+           height: (MediaQuery.of(context).size.height - appBar.preferredSize.height - MediaQuery.of(context).padding.top)*0.3,
+           child: Chart(_recentTransactions)),
+            Container(
+                height: (MediaQuery.of(context).size.height - appBar.preferredSize.height - MediaQuery.of(context).padding.top)*0.6,
+
+                child: TransactionList(_userTransaction,_deleteTransaction)),
           ],
         ),
       ),

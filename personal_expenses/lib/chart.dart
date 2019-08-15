@@ -43,31 +43,34 @@ double get maxSpending {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-        margin: EdgeInsets.all(20),
+    return Container(
+      height: MediaQuery.of(context).size.height *0.3,
+      child: Card(
+        elevation: 5,
+          margin: EdgeInsets.all(20),
 
 
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: groupedTransactionValues.map((data){
-                return Flexible(
-                  fit: FlexFit.tight,
-                  child: ChartBar(
-                    data['day'],data['amount'] ,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: groupedTransactionValues.map((data){
+                  return Flexible(
+                    fit: FlexFit.tight,
+                    child: ChartBar(
+                      data['day'],data['amount'] ,
 
 
-                    maxSpending == 0.0 ? 0.0 :  (data['amount'] as double) / maxSpending
-                  ),
-                );
+                      maxSpending == 0.0 ? 0.0 :  (data['amount'] as double) / maxSpending
+                    ),
+                  );
 
-            }).toList(),
+              }).toList(),
+              ),
             ),
-          ),
 
 
+      ),
     );
   }
 }

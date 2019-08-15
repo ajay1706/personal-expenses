@@ -13,10 +13,7 @@ TransactionList(this.transactions, this.deleteTx);
   @override
   Widget build(BuildContext context) {
     return
-      Container(
-        height: 900,
-
-          child:transactions.isEmpty?
+           transactions.isEmpty?
               Column(
                 children: <Widget>[
                   Text("No Transactions added yet",
@@ -53,9 +50,9 @@ itemBuilder: (ctx,index){
 },
             itemCount: transactions.length,
 
-            ),
+            );
 
         
-      );
+
   }
 }
